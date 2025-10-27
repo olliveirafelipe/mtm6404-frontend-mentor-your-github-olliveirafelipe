@@ -1,39 +1,94 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Frontend Mentor | Intro section with dropdown navigation</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="icon" type="image/png" href="./images/favicon-32x32.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
+  <header class="site-header container">
+    <a class="logo" href="#" aria-label="Home">
+      <img src="./images/logo.svg" alt="Snap" width="84" height="27" />
+    </a>
 
-  Features
-  Company
-  Careers
-  About
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
+      <img src="./images/icon-menu.svg" alt="" aria-hidden="true"/>
+    </button>
 
-  Login
-  Register
+    <nav id="site-nav" class="site-nav" aria-label="Primary" hidden>
+      <button class="nav-close" aria-label="Close menu">
+        <img src="./images/icon-close-menu.svg" alt="" aria-hidden="true"/>
+      </button>
 
-  Make remote work
+      <ul class="site-nav__list">
+        <li class="site-nav__item site-nav__item--has-dropdown">
+          <button class="dropdown__trigger" aria-expanded="false" aria-controls="dropdown-features">
+            Features
+            <img class="chev" src="./images/icon-arrow-down.svg" alt="" aria-hidden="true" />
+          </button>
+          <ul id="dropdown-features" class="dropdown__menu" hidden>
+            <li><a href="#"><img src="./images/icon-todo.svg" alt="" aria-hidden="true"> Todo List</a></li>
+            <li><a href="#"><img src="./images/icon-calendar.svg" alt="" aria-hidden="true"> Calendar</a></li>
+            <li><a href="#"><img src="./images/icon-reminders.svg" alt="" aria-hidden="true"> Reminders</a></li>
+            <li><a href="#"><img src="./images/icon-planning.svg" alt="" aria-hidden="true"> Planning</a></li>
+          </ul>
+        </li>
 
-  Get your team in sync, no matter your location. Streamline processes, 
-  create team rituals, and watch productivity soar.
+        <li class="site-nav__item site-nav__item--has-dropdown">
+          <button class="dropdown__trigger" aria-expanded="false" aria-controls="dropdown-company">
+            Company
+            <img class="chev" src="./images/icon-arrow-down.svg" alt="" aria-hidden="true" />
+          </button>
+          <ul id="dropdown-company" class="dropdown__menu" hidden>
+            <li><a href="#">History</a></li>
+            <li><a href="#">Our Team</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </li>
 
-  Learn more
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+        <li class="site-nav__item"><a href="#">Careers</a></li>
+        <li class="site-nav__item"><a href="#">About</a></li>
+      </ul>
+
+      <div class="auth">
+        <a class="btn btn--link" href="#">Login</a>
+        <a class="btn btn--outline" href="#">Register</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container hero-grid">
+    <picture class="hero__media">
+      <source media="(min-width: 900px)" srcset="./images/image-hero-desktop.png" />
+      <img src="./images/image-hero-mobile.png" alt="Hero" />
+    </picture>
+
+    <div class="hero__content">
+      <h1>Make remote work</h1>
+      <p>Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.</p>
+      <a class="btn btn--primary" href="#">Learn more</a>
+
+      <ul class="clients" aria-label="Clients">
+        <li><img src="./images/client-databiz.svg" alt="Databiz" /></li>
+        <li><img src="./images/client-audiophile.svg" alt="Audiophile" /></li>
+        <li><img src="./images/client-meet.svg" alt="Meet" /></li>
+        <li><img src="./images/client-maker.svg" alt="Maker" /></li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="site-footer container">
+    <p>© 2025 Frontend Mentor practice. Built by Felipe Oliveira.</p>
+  </footer>
+
+  <script src="./script.js"></script>
 </body>
 </html>
